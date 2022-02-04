@@ -45,7 +45,7 @@ epoch:5 batch:16
 ![image](https://user-images.githubusercontent.com/77257138/152546598-0892517a-fb9f-4c13-9512-28f9b6dd05f9.png)
 
 ## other
-data augmentation method:
+1. data augmentation method:
 * tf.keras.preprocessing.image.ImageDataGenerator
 * tf.keras.preprocessing.image_dataset_from_directory
 * tf.data.Dataset with image files
@@ -60,6 +60,20 @@ benefit:
 conclusion:
 
 image_dataset_from_directory should be the new go-to because it is not more complicated that the old method and is clearly faster.
+
+2.值方圖均衡化(Histogram Equalization)與局部均衡化(createCLAHE)
+* object: 處理影像是偏亮或偏暗
+
+note:createCLAHE，這種方法是對部分影像分別做均衡化，限制局部明暗對比太大的狀況(使用Histogram Equalization是對全局圖片進行調整，因此也會存在著一些問題，像是因為整體影像的亮度增加，可能有些小地方會變得模糊)
+
+值方圖均衡化(Histogram Equalization)
+
+![image](https://user-images.githubusercontent.com/77257138/152548094-28af436e-4111-4663-98ad-4dac3c6a1d38.png)
+
+局部均衡化(createCLAHE)
+
+![image](https://user-images.githubusercontent.com/77257138/152548138-ba9e4459-561a-4968-9d6c-336b35be35f5.png)
+
 
 ## Reference
 https://aidea-web.tw/topic/285ef3be-44eb-43dd-85cc-f0388bf85ea4
