@@ -28,7 +28,8 @@ Label：瑕疵分類類別（0 表示 normal，1 表示 void，2 表示 horizont
 
 
 ## 前處理
-
+* 影像隨機水平, 垂直平移(range=0.05)
+* 影像大小縮放成 224 x 224
 ## 模型
 MobileNet
 ## Metrics
@@ -36,12 +37,34 @@ Accuracy = Number of correct predictions/Number of total predictions
 
 ![image](https://user-images.githubusercontent.com/77257138/149628919-77c1820f-edd5-44ce-87b2-715cf5f6c784.png)
 ## 成果
-training loss: 
+epoch:5 batch:16
 
-validation loss: 
+* training accuracy:0.9593 
+* validation accuracy: 0.9666
 
+![image](https://user-images.githubusercontent.com/77257138/152546598-0892517a-fb9f-4c13-9512-28f9b6dd05f9.png)
+
+## other
+data augmentation method:
+* tf.keras.preprocessing.image.ImageDataGenerator
+* tf.keras.preprocessing.image_dataset_from_directory
+* tf.data.Dataset with image files
+* tf.data.Dataset with TFRecords
+
+benefit:
+
+* data增強
+* feeds the data gradually to the neural network without keeping it into memory.
+![image](https://user-images.githubusercontent.com/77257138/152545306-c5e34546-c04c-413b-bca8-2bb26e36dcf7.png)
+
+conclusion:
+
+image_dataset_from_directory should be the new go-to because it is not more complicated that the old method and is clearly faster.
 
 ## Reference
 https://aidea-web.tw/topic/285ef3be-44eb-43dd-85cc-f0388bf85ea4
 https://ithelp.ithome.com.tw/articles/10263866
 https://github.com/hcygeorge/aoi_defect_detection
+https://towardsdatascience.com/what-is-the-best-input-pipeline-to-train-image-classification-models-with-tf-keras-eb3fe26d3cc5
+
+
