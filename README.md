@@ -74,11 +74,17 @@ note:createCLAHE，這種方法是對部分影像分別做均衡化，限制局�
 
 ![image](https://user-images.githubusercontent.com/77257138/152548138-ba9e4459-561a-4968-9d6c-336b35be35f5.png)
 
+3. GlobalAveragePooling 將權重值做平均, 減少參數
+
+![image](https://user-images.githubusercontent.com/77257138/154809657-fa499f0b-df14-4db7-9f7e-afded8c7f082.png)
+
+
 
 ## Reference
 https://aidea-web.tw/topic/285ef3be-44eb-43dd-85cc-f0388bf85ea4
 https://ithelp.ithome.com.tw/articles/10263866
 https://github.com/hcygeorge/aoi_defect_detection
 https://towardsdatascience.com/what-is-the-best-input-pipeline-to-train-image-classification-models-with-tf-keras-eb3fe26d3cc5
+https://ithelp.ithome.com.tw/articles/10276291
 
 
